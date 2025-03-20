@@ -1,5 +1,5 @@
 FROM node:22 AS builder1
-LABEL authors="shaunwah"
+
 
 WORKDIR /client
 
@@ -20,6 +20,7 @@ COPY ecommerce/src src
 
 COPY --from=builder1 /client/dist/* /server/src/main/resources/static
 
+RUN chmod +x mvnw
 RUN ./mvnw install -DskipTests
 
 FROM openjdk:23
