@@ -18,7 +18,7 @@ COPY ecommerce/.mvn .mvn
 COPY ecommerce/mvnw .
 COPY ecommerce/src src
 
-COPY --from=builder1 /client/dist/* /server/src/main/resources/static
+COPY --from=builder1 /client/dist/client-side/browser /server/src/main/resources/static
 
 RUN chmod a+x mvnw
 RUN ./mvnw install -DskipTests
