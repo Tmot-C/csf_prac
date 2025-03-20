@@ -27,7 +27,7 @@ FROM openjdk:23
 
 WORKDIR /app
 
-COPY --from=builder2 /app/target/*.jar app.jar
+COPY --from=builder2 /server/target/*.jar app.jar
 
 ENV PORT=8080
 
